@@ -410,8 +410,14 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const oneD = Array(n).fill(0);
+  const twoD = Array(n).fill(oneD);
+  return twoD.map((el, i) => {
+    const newEl = [...el];
+    newEl[i] = 1;
+    return newEl;
+  });
 }
 
 /**
